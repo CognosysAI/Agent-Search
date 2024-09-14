@@ -1,17 +1,31 @@
 {
   "name": "web-oracle",
   "version": "1.0.0",
-  "description": "",
+  "description": "Official TypeScript SDK for interacting with the WebOracle API",
   "main": "dist/weboracle.js",
   "types": "dist/weboracle.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "lint": "eslint src/**/*.ts"
+    "lint": "eslint src/**/*.ts",
+    "prepublishOnly": "npm run build"
   },
-  "keywords": [],
+  "keywords": [
+    "weboracle",
+    "api",
+    "sdk",
+    "typescript"
+  ],
   "author": "Harsha",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CognosysAI/Web-Oracle.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CognosysAI/Web-Oracle/issues"
+  },
+  "homepage": "https://github.com/CognosysAI/Web-Oracle#readme",
   "dependencies": {
     "axios": "^1.7.7"
   },
