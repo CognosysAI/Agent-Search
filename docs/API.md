@@ -50,7 +50,7 @@ The Browse API allows you to browse and extract information from web pages.
 Browse a web page and extract information.
 
 ```typescript
-webOracle.browse.browse(params: BrowseRequest): Promise<any>
+webOracle.browse.explode(params: BrowseRequest): Promise<any>
 ```
 
 Parameters:
@@ -72,7 +72,7 @@ The Crawl API provides functionality to crawl websites.
 Crawl a website starting from a given URL.
 
 ```typescript
-webOracle.crawl.crawl(params: CrawlRequest): Promise<any>
+webOracle.crawl.start(params: CrawlRequest): Promise<any>
 ```
 
 Parameters:
@@ -148,7 +148,7 @@ The Scrape API allows you to extract content from web pages.
 Scrape content from a specific URL.
 
 ```typescript
-webOracle.scrape.scrape(params: ScrapeRequest): Promise<any>
+webOracle.scrape.extract(params: ScrapeRequest): Promise<any>
 ```
 
 Parameters:

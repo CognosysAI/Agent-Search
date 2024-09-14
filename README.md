@@ -32,26 +32,21 @@ Now you can use the various API methods:
 
 ```typescript
 // Get an answer
-const answerResponse = await webOracle.answer.getAnswer({
+const answerResponse = await webOracle.answer.get({
   query: "What is the capital of France?",
 });
 
 // Perform an advanced search
-const advancedSearchResponse = await webOracle.answer.advancedSearch({
+const advancedSearchResponse = await webOracle.answer.searchAdvanced({
   query: "Latest developments in AI",
   additionalInstructions: "Focus on the last 6 months",
-});
-
-// Generate search queries
-const generatedQueries = await webOracle.answer.generateQueries({
-  query: "Electric vehicles market trends",
 });
 ```
 
 ### Browse API
 
 ```typescript
-const browseResult = await webOracle.browse.browse({
+const browseResult = await webOracle.browse.explore({
   url: "https://example.com",
   singlePage: true,
 });
@@ -60,7 +55,7 @@ const browseResult = await webOracle.browse.browse({
 ### Crawl API
 
 ```typescript
-const crawlResult = await webOracle.crawl.crawl({
+const crawlResult = await webOracle.crawl.start({
   url: "https://example.com",
   crawlOptions: {
     maxDepth: 3,
@@ -89,12 +84,17 @@ const linkedInResults = await webOracle.search.linkedInSearch({
 const rerankedResults = await webOracle.search.rerank({
   query: "machine learning applications",
 });
+
+// Generate search queries
+const generatedQueries = await webOracle.search.generateQueries({
+  query: "Electric vehicles market trends",
+});
 ```
 
 ### Scrape API
 
 ```typescript
-const scrapedContent = await webOracle.scrape.scrape({
+const scrapedContent = await webOracle.scrape.extract({
   url: "https://example.com",
   scrapeOptions: {
     formats: ["markdown", "html"],
