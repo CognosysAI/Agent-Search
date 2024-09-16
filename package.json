@@ -1,11 +1,11 @@
 {
   "name": "web-oracle",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Official TypeScript SDK for interacting with the WebOracle API",
   "main": "dist/weboracle.js",
   "types": "dist/weboracle.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "rimraf dist && tsc",
     "test": "jest",
     "lint": "eslint src/**/*.ts",
     "prepublishOnly": "pnpm run build"
@@ -27,15 +27,25 @@
   },
   "homepage": "https://github.com/CognosysAI/Web-Oracle#readme",
   "dependencies": {
-    "axios": "^1.7.7"
+    "axios": "^1.7.7",
+    "module-alias": "^2.2.3"
   },
   "devDependencies": {
     "@types/jest": "^29.5.13",
+    "@types/module-alias": "^2.0.4",
     "@typescript-eslint/eslint-plugin": "^8.5.0",
     "@typescript-eslint/parser": "^8.5.0",
     "eslint": "^9.10.0",
     "jest": "^29.7.0",
+    "rimraf": "^6.0.1",
     "ts-jest": "^29.2.5",
     "typescript": "^5.6.2"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "_moduleAliases": {
+    "@": "src"
   }
 }

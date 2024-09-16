@@ -1,5 +1,5 @@
 {
-    "compilerOptions": {
+  "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
     "declaration": true,
@@ -9,8 +9,11 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
     },
-    "include": ["src"],
-    "exclude": ["node_modules", "**/tests/*"]
-    }
+    "rootDir": "src",
+    "sourceMap": true,
+    "declarationMap": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "**/tests/*"]
+}

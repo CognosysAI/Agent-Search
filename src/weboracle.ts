@@ -1,3 +1,4 @@
+import "module-alias/register";
 import { Config } from "@/config";
 import { Answer } from "@/api/answer";
 import { Browse } from "@/api/browse";
