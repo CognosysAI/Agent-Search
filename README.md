@@ -21,7 +21,7 @@ yarn add web-oracle
 First, import and initialize the WebOracle client:
 
 ```typescript
-import WebOracle from "weboracle-sdk";
+import { WebOracle } from "weboracle-sdk";
 
 const webOracle = new WebOracle("your_api_key");
 ```

@@ -1,9 +1,17 @@
 {
   "name": "web-oracle",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Official TypeScript SDK for interacting with the WebOracle API",
-  "main": "dist/weboracle.js",
-  "types": "dist/weboracle.d.ts",
+  "main": "./dist/weboracle.js",
+  "module": "./dist/weboracle.js",
+  "types": "./dist/weboracle.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/weboracle.js",
+      "require": "./dist/weboracle.js",
+      "types": "./dist/weboracle.d.ts"
+    }
+  },
   "scripts": {
     "build": "rimraf dist && tsc",
     "test": "jest",
