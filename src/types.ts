@@ -31,9 +31,11 @@ export interface ScrapeRequest {
 export interface SearchRequest {
   q: string;
   type?: "search" | "news" | "images" | "places";
-  num?: number;
   tbs?: string;
-  dateFilter?: DateFilter;
+  location?: string;
+  gl?: string;
+  num?: number;
+  page?: number;
 }
 export interface LinkedInSearchRequest {
   query: string;
@@ -70,6 +72,7 @@ export interface ScrapeParams {
   };
   waitFor?: number;
   timeout?: number;
+  singlePage?: boolean;
 }
 export interface CrawlOptions {
   includePaths?: string[];
@@ -86,4 +89,79 @@ export interface ExtractorOptions {
   mode?: "llm-extraction";
   extractionPrompt?: string;
   extractionSchema: Record<string, any>;
+}
+
+interface Sitelink {
+  title: string;
+  link: string;
+}
+
+type Attributes = Record<string, string>;
+
+export interface OrganicResult {
+  title: string;
+  link: string;
+  snippet: string;
+  date?: string;
+  position: number;
+  sitelinks?: Sitelink[];
+  rating?: number;
+  ratingCount?: number;
+  priceRange?: string;
+  attributes?: Attributes;
+  imageUrl?: string;
+}
+
+interface KnowledgeGraph {
+  title: string;
+  type: string;
+  imageUrl: string;
+  description: string;
+  descriptionSource: string;
+  descriptionLink: string;
+  attributes: Record<string, string>;
+}
+interface Place {
+  title: string;
+  address: string;
+  rating: number;
+  ratingCount: number;
+  cid: string;
+}
+
+interface TopStory {
+  title: string;
+  link: string;
+  source: string;
+  date: string;
+  imageUrl: string;
+}
+
+interface RelatedSearch {
+  query: string;
+}
+
+interface AnswerBox {
+  snippet: string;
+  snippetHighlighted: string[];
+  title: string;
+  link: string;
+}
+
+interface PeopleAlsoAskItem {
+  question: string;
+  snippet: string;
+  title: string;
+  link: string;
+}
+
+export interface SerperResponse {
+  searchParameters: SearchRequest;
+  organic: OrganicResult[];
+  places?: Place[];
+  topStories?: TopStory[];
+  knowledgeGraph?: KnowledgeGraph;
+  relatedSearches: RelatedSearch[];
+  answerBox?: AnswerBox;
+  peopleAlsoAsk?: PeopleAlsoAskItem[];
 }
