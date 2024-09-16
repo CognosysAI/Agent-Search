@@ -5,6 +5,8 @@ import { Crawl } from "./api/crawl";
 import { Search } from "./api/search";
 import { Scrape } from "./api/scrape";
 
+import * as Types from "./types";
+
 class WebOracle {
   private config: Config;
   public answer: Answer;
@@ -24,3 +26,4 @@ class WebOracle {
 }
 
 export default WebOracle;
+export * from "./types";
