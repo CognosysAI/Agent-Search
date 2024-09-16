@@ -2,12 +2,12 @@ import axios, { AxiosRequestConfig, Method } from "axios";
 import { Config } from "../config";
 import { WebOracleError } from "./error";
 
-export async function makeRequest(
+export async function makeRequest<T>(
   config: Config,
   method: Method,
   path: string,
   data?: any
-): Promise<any> {
+): Promise<T> {
   const url = `${config.baseUrl}/${config.version}${path}`;
   const headers = {
     Authorization: `Bearer ${config.apiKey}`,
@@ -23,7 +23,7 @@ export async function makeRequest(
 
   try {
     const response = await axios(axiosConfig);
-    return response.data;
+    return response.data as T;
   } catch (error: any) {
     if (error.response) {
       throw new WebOracleError(

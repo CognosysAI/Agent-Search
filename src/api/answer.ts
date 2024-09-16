@@ -1,5 +1,10 @@
 import { Config } from "../config";
-import { AnswerRequest, AdvancedSearchRequest } from "../types";
+import {
+  AnswerRequest,
+  AdvancedSearchRequest,
+  AnswerResponse,
+  AdvancedSearchResponse,
+} from "../types";
 import { makeRequest } from "../utils/http";
 
 export class Answer {
@@ -9,11 +14,18 @@ export class Answer {
     this.config = config;
   }
 
-  async get(params: AnswerRequest): Promise<any> {
-    return makeRequest(this.config, "POST", "/answer", params);
+  async get(params: AnswerRequest): Promise<AnswerResponse> {
+    return makeRequest<AnswerResponse>(this.config, "POST", "/answer", params);
   }
 
-  async searchAdvanced(params: AdvancedSearchRequest): Promise<any> {
-    return makeRequest(this.config, "POST", "/answer/advanced-search", params);
+  async searchAdvanced(
+    params: AdvancedSearchRequest
+  ): Promise<AdvancedSearchResponse> {
+    return makeRequest<AdvancedSearchResponse>(
+      this.config,
+      "POST",
+      "/answer/advanced-search",
+      params
+    );
   }
 }

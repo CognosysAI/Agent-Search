@@ -1,5 +1,5 @@
 import { Config } from "../config";
-import { ScrapeRequest } from "../types";
+import { ScrapeRequest, ScrapeResponse } from "../types";
 import { makeRequest } from "../utils/http";
 
 export class Scrape {
@@ -9,7 +9,7 @@ export class Scrape {
     this.config = config;
   }
 
-  async extract(params: ScrapeRequest): Promise<any> {
-    return makeRequest(this.config, "POST", "/scrape", params);
+  async extract(params: ScrapeRequest): Promise<ScrapeResponse> {
+    return makeRequest<ScrapeResponse>(this.config, "POST", "/scrape", params);
   }
 }

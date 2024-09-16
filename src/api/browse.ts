@@ -1,5 +1,5 @@
 import { Config } from "../config";
-import { BrowseRequest } from "../types";
+import { BrowseRequest, BrowseResponse } from "../types";
 import { makeRequest } from "../utils/http";
 
 export class Browse {
@@ -9,7 +9,12 @@ export class Browse {
     this.config = config;
   }
 
-  async explore(params: BrowseRequest): Promise<any> {
-    return makeRequest(this.config, "POST", "/browse/browse", params);
+  async explore(params: BrowseRequest): Promise<BrowseResponse> {
+    return makeRequest<BrowseResponse>(
+      this.config,
+      "POST",
+      "/browse/browse",
+      params
+    );
   }
 }

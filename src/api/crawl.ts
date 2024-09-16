@@ -1,5 +1,5 @@
 import { Config } from "../config";
-import { CrawlRequest } from "../types";
+import { CrawlRequest, CrawlResponse } from "../types";
 import { makeRequest } from "../utils/http";
 
 export class Crawl {
@@ -9,7 +9,7 @@ export class Crawl {
     this.config = config;
   }
 
-  async start(params: CrawlRequest): Promise<any> {
-    return makeRequest(this.config, "POST", "/crawl", params);
+  async start(params: CrawlRequest): Promise<CrawlResponse> {
+    return makeRequest<CrawlResponse>(this.config, "POST", "/crawl", params);
   }
 }
