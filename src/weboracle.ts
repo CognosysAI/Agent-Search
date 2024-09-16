@@ -7,29 +7,19 @@ import { Scrape } from "@/api/scrape";
 
 class WebOracle {
   private config: Config;
+  public answer: Answer;
+  public browse: Browse;
+  public crawl: Crawl;
+  public search: Search;
+  public scrape: Scrape;
 
   constructor(apiKey: string, options: Partial<Config> = {}) {
     this.config = new Config(apiKey, options);
-  }
-
-  answer(): Answer {
-    return new Answer(this.config);
-  }
-
-  browse(): Browse {
-    return new Browse(this.config);
-  }
-
-  crawl(): Crawl {
-    return new Crawl(this.config);
-  }
-
-  search(): Search {
-    return new Search(this.config);
-  }
-
-  scrape(): Scrape {
-    return new Scrape(this.config);
+    this.answer = new Answer(this.config);
+    this.browse = new Browse(this.config);
+    this.crawl = new Crawl(this.config);
+    this.search = new Search(this.config);
+    this.scrape = new Scrape(this.config);
   }
 }
 
