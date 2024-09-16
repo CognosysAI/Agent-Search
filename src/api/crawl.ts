@@ -1,6 +1,6 @@
-import { Config } from "@/config";
-import { CrawlRequest } from "@/types";
-import { makeRequest } from "@/utils/http";
+import { Config } from "../config";
+import { CrawlRequest } from "../types";
+import { makeRequest } from "../utils/http";
 
 export class Crawl {
   private config: Config;

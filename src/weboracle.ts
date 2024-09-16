@@ -1,10 +1,9 @@
-import "module-alias/register";
-import { Config } from "@/config";
-import { Answer } from "@/api/answer";
-import { Browse } from "@/api/browse";
-import { Crawl } from "@/api/crawl";
-import { Search } from "@/api/search";
-import { Scrape } from "@/api/scrape";
+import { Config } from "./config";
+import { Answer } from "./api/answer";
+import { Browse } from "./api/browse";
+import { Crawl } from "./api/crawl";
+import { Search } from "./api/search";
+import { Scrape } from "./api/scrape";
 
 class WebOracle {
   private config: Config;

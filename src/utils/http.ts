@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig, Method } from "axios";
-import { Config } from "@/config";
-import { WebOracleError } from "@/utils/error";
+import { Config } from "../config";
+import { WebOracleError } from "./error";
 
 export async function makeRequest(
   config: Config,

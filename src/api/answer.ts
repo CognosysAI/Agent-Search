@@ -1,6 +1,6 @@
-import { Config } from "@/config";
-import { AnswerRequest, AdvancedSearchRequest } from "@/types";
-import { makeRequest } from "@/utils/http";
+import { Config } from "../config";
+import { AnswerRequest, AdvancedSearchRequest } from "../types";
+import { makeRequest } from "../utils/http";
 
 export class Answer {
   private config: Config;

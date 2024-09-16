@@ -1,11 +1,11 @@
-import { Config } from "@/config";
+import { Config } from "../config";
 import {
   SearchRequest,
   LinkedInSearchRequest,
   RerankRequest,
   GenerateQueriesRequest,
-} from "@/types";
-import { makeRequest } from "@/utils/http";
+} from "../types";
+import { makeRequest } from "../utils/http";
 
 export class Search {
   private config: Config;
