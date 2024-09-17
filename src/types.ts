@@ -168,9 +168,7 @@ export interface SerperResponse {
 
 // Response types
 export interface AnswerResponse {
-  answer: string;
-  input: string;
-  researchResults: ResearchResult[];
+  data: { answer: string; input: string; researchResults: ResearchResult[] };
 }
 
 export interface AdvancedSearchResponse {

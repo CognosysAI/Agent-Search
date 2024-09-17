@@ -1,6 +1,6 @@
 {
   "name": "web-oracle",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Official TypeScript SDK for interacting with the WebOracle API",
   "main": "./dist/weboracle.js",
   "module": "./dist/weboracle.js",
