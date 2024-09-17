@@ -156,14 +156,16 @@ interface PeopleAlsoAskItem {
 }
 
 export interface SerperResponse {
-  searchParameters: SearchRequest;
-  organic: OrganicResult[];
-  places?: Place[];
-  topStories?: TopStory[];
-  knowledgeGraph?: KnowledgeGraph;
-  relatedSearches: RelatedSearch[];
-  answerBox?: AnswerBox;
-  peopleAlsoAsk?: PeopleAlsoAskItem[];
+  data: {
+    searchParameters: SearchRequest;
+    organic: OrganicResult[];
+    places?: Place[];
+    topStories?: TopStory[];
+    knowledgeGraph?: KnowledgeGraph;
+    relatedSearches: RelatedSearch[];
+    answerBox?: AnswerBox;
+    peopleAlsoAsk?: PeopleAlsoAskItem[];
+  };
 }
 
 // Response types
@@ -228,8 +230,8 @@ export interface RerankResponse {
 
 // Additional types
 export interface ResearchResult {
-  knowledgeGraph?: SerperResponse["knowledgeGraph"];
-  answerBox?: SerperResponse["answerBox"];
+  knowledgeGraph?: SerperResponse["data"]["knowledgeGraph"];
+  answerBox?: SerperResponse["data"]["answerBox"];
   links: {
     title: string;
     snippet: string;
