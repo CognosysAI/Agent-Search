@@ -1,6 +1,6 @@
-# WebOracle API Reference
+# AgentSearch API Reference
 
-This document provides detailed information about the WebOracle API endpoints and their usage through the TypeScript SDK.
+This document provides detailed information about the AgentSearch API endpoints and their usage through the TypeScript SDK.
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ The Answer API provides methods for getting answers and performing advanced sear
 Get an answer to a specific query.
 
 ```typescript
-webOracle.answer.get(params: AnswerRequest): Promise<any>
+agentSearch.answer.get(params: AnswerRequest): Promise<any>
 ```
 
 Parameters:
@@ -33,7 +33,7 @@ Parameters:
 Perform an advanced search with more complex parameters.
 
 ```typescript
-webOracle.answer.advancedSearch(params: AdvancedSearchRequest): Promise<any>
+agentSearch.answer.advancedSearch(params: AdvancedSearchRequest): Promise<any>
 ```
 
 Parameters:
@@ -50,7 +50,7 @@ The Browse API allows you to browse and extract information from web pages.
 Browse a web page and extract information.
 
 ```typescript
-webOracle.browse.explode(params: BrowseRequest): Promise<any>
+agentSearch.browse.explode(params: BrowseRequest): Promise<any>
 ```
 
 Parameters:
@@ -72,7 +72,7 @@ The Crawl API provides functionality to crawl websites.
 Crawl a website starting from a given URL.
 
 ```typescript
-webOracle.crawl.start(params: CrawlRequest): Promise<any>
+agentSearch.crawl.start(params: CrawlRequest): Promise<any>
 ```
 
 Parameters:
@@ -89,7 +89,7 @@ The Search API offers various search capabilities, including Serper search, Link
 Perform a search using the Serper search engine.
 
 ```typescript
-webOracle.search.serperSearch(params: SearchRequest | SearchRequest[]): Promise<any>
+agentSearch.search.serperSearch(params: SearchRequest | SearchRequest[]): Promise<any>
 ```
 
 Parameters:
@@ -105,7 +105,7 @@ Parameters:
 Perform a LinkedIn-specific search.
 
 ```typescript
-webOracle.search.linkedInSearch(params: LinkedInSearchRequest): Promise<any>
+agentSearch.search.linkedInSearch(params: LinkedInSearchRequest): Promise<any>
 ```
 
 Parameters:
@@ -120,7 +120,7 @@ Parameters:
 Rerank search results based on relevance.
 
 ```typescript
-webOracle.search.rerank(params: RerankRequest): Promise<any>
+agentSearch.search.rerank(params: RerankRequest): Promise<any>
 ```
 
 Parameters:
@@ -132,7 +132,7 @@ Parameters:
 Generate optimized search queries based on an initial query.
 
 ```typescript
-webOracle.search.generateQueries(params: GenerateQueriesRequest): Promise<any>
+agentSearch.search.generateQueries(params: GenerateQueriesRequest): Promise<any>
 ```
 
 Parameters:
@@ -148,7 +148,7 @@ The Scrape API allows you to extract content from web pages.
 Scrape content from a specific URL.
 
 ```typescript
-webOracle.scrape.extract(params: ScrapeRequest): Promise<any>
+agentSearch.scrape.extract(params: ScrapeRequest): Promise<any>
 ```
 
 Parameters:

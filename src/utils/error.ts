@@ -1,8 +1,8 @@
-export class WebOracleError extends Error {
+export class AgentSearchError extends Error {
   status: number;
   constructor(message: string, status: number) {
     super(message);
-    this.name = "WebOracleError";
+    this.name = "AgentSearchError";
     this.status = status;
   }
 }

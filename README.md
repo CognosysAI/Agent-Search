@@ -1,29 +1,29 @@
-# WebOracle TypeScript SDK
+# AgentSearch TypeScript SDK
 
-The official TypeScript SDK for interacting with the WebOracle API. This SDK provides a simple and intuitive interface for making requests to various WebOracle endpoints.
+The official TypeScript SDK for interacting with the AgentSearch API. This SDK provides a simple and intuitive interface for making requests to various AgentSearch endpoints.
 
 ## Installation
 
 Install the SDK using npm:
 
 ```bash
-npm install web-oracle
+npm install agent-search
 ```
 
 Or using yarn:
 
 ```bash
-yarn add web-oracle
+yarn add agent-search
 ```
 
 ## Usage
 
-First, import and initialize the WebOracle client:
+First, import and initialize the AgentSearch client:
 
 ```typescript
-import { WebOracle } from "weboracle-sdk";
+import { AgentSearch } from "agentsearch-sdk";
 
-const webOracle = new WebOracle("your_api_key");
+const agentSearch = new AgentSearch("your_api_key");
 ```
 
 Now you can use the various API methods:
@@ -32,12 +32,12 @@ Now you can use the various API methods:
 
 ```typescript
 // Get an answer
-const answerResponse = await webOracle.answer.get({
+const answerResponse = await agentSearch.answer.get({
   query: "What is the capital of France?",
 });
 
 // Perform an advanced search
-const advancedSearchResponse = await webOracle.answer.searchAdvanced({
+const advancedSearchResponse = await agentSearch.answer.searchAdvanced({
   query: "Latest developments in AI",
   additionalInstructions: "Focus on the last 6 months",
 });
@@ -46,7 +46,7 @@ const advancedSearchResponse = await webOracle.answer.searchAdvanced({
 ### Browse API
 
 ```typescript
-const browseResult = await webOracle.browse.explore({
+const browseResult = await agentSearch.browse.explore({
   url: "https://example.com",
   singlePage: true,
 });
@@ -55,7 +55,7 @@ const browseResult = await webOracle.browse.explore({
 ### Crawl API
 
 ```typescript
-const crawlResult = await webOracle.crawl.start({
+const crawlResult = await agentSearch.crawl.start({
   url: "https://example.com",
   crawlOptions: {
     maxDepth: 3,
@@ -68,25 +68,25 @@ const crawlResult = await webOracle.crawl.start({
 
 ```typescript
 // Perform a Serper search
-const searchResults = await webOracle.search.serperSearch({
+const searchResults = await agentSearch.search.serperSearch({
   q: "best restaurants in New York",
   num: 10,
 });
 
 // Perform a LinkedIn search
-const linkedInResults = await webOracle.search.linkedInSearch({
+const linkedInResults = await agentSearch.search.linkedInSearch({
   query: "software engineers",
   page: 1,
   resultsPerPage: 20,
 });
 
 // Rerank search results
-const rerankedResults = await webOracle.search.rerank({
+const rerankedResults = await agentSearch.search.rerank({
   query: "machine learning applications",
 });
 
 // Generate search queries
-const generatedQueries = await webOracle.search.generateQueries({
+const generatedQueries = await agentSearch.search.generateQueries({
   query: "Electric vehicles market trends",
 });
 ```
@@ -94,7 +94,7 @@ const generatedQueries = await webOracle.search.generateQueries({
 ### Scrape API
 
 ```typescript
-const scrapedContent = await webOracle.scrape.extract({
+const scrapedContent = await agentSearch.scrape.extract({
   url: "https://example.com",
   scrapeOptions: {
     formats: ["markdown", "html"],
@@ -105,14 +105,14 @@ const scrapedContent = await webOracle.scrape.extract({
 
 ## Error Handling
 
-The SDK uses custom `WebOracleError` for error handling. You can catch and handle these errors in your code:
+The SDK uses custom `AgentSearchError` for error handling. You can catch and handle these errors in your code:
 
 ```typescript
 try {
-  const result = await webOracle.answer.getAnswer({ query: "Some query" });
+  const result = await agentSearch.answer.getAnswer({ query: "Some query" });
   // Handle successful response
 } catch (error) {
-  if (error instanceof WebOracleError) {
+  if (error instanceof AgentSearchError) {
     console.error(`API Error: ${error.message}, Status: ${error.status}`);
   } else {
     console.error("Unexpected error:", error);

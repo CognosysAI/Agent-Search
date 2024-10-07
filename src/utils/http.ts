@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig, Method } from "axios";
 import { Config } from "../config";
-import { WebOracleError } from "./error";
+import { AgentSearchError } from "./error";
 
 export async function makeRequest<T>(
   config: Config,
@@ -26,14 +26,14 @@ export async function makeRequest<T>(
     return response.data as T;
   } catch (error: any) {
     if (error.response) {
-      throw new WebOracleError(
+      throw new AgentSearchError(
         error.response.data.error || "Unknown error",
         error.response.status
       );
     } else if (error.request) {
-      throw new WebOracleError("No response received from the server", 500);
+      throw new AgentSearchError("No response received from the server", 500);
     } else {
-      throw new WebOracleError("Error setting up the request", 500);
+      throw new AgentSearchError("Error setting up the request", 500);
     }
   }
 }

@@ -1,15 +1,15 @@
 {
-  "name": "web-oracle",
-  "version": "1.0.10",
-  "description": "Official TypeScript SDK for interacting with the WebOracle API",
-  "main": "./dist/weboracle.js",
-  "module": "./dist/weboracle.js",
-  "types": "./dist/weboracle.d.ts",
+  "name": "agent-search",
+  "version": "1.1.0",
+  "description": "Official TypeScript SDK for interacting with the AgentSearch API",
+  "main": "./dist/agentsearch.js",
+  "module": "./dist/agentsearch.js",
+  "types": "./dist/agentsearch.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/weboracle.js",
-      "require": "./dist/weboracle.js",
-      "types": "./dist/weboracle.d.ts"
+      "import": "./dist/agentsearch.js",
+      "require": "./dist/agentsearch.js",
+      "types": "./dist/agentsearch.d.ts"
     }
   },
   "scripts": {
@@ -19,7 +19,7 @@
     "prepublishOnly": "pnpm run build"
   },
   "keywords": [
-    "weboracle",
+    "agentsearch",
     "api",
     "sdk",
     "typescript"

@@ -5,7 +5,7 @@ import { Crawl } from "./api/crawl";
 import { Search } from "./api/search";
 import { Scrape } from "./api/scrape";
 
-export class WebOracle {
+export class AgentSearch {
   private config: Config;
   public answer: Answer;
   public browse: Browse;
