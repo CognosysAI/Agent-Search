@@ -25,15 +25,27 @@ export async function makeRequest<T>(
     const response = await axios(axiosConfig);
     return response.data as T;
   } catch (error: any) {
+    const errorMessage = error.stack || error.message || "Unknown error";
+
     if (error.response) {
       throw new AgentSearchError(
-        error.response.data.error || "Unknown error",
+        `Error: ${error.response.data.error || "Unknown error"} - Status: ${
+          error.response.status
+        } - Stack: ${errorMessage}`,
         error.response.status
       );
     } else if (error.request) {
-      throw new AgentSearchError("No response received from the server", 500);
+      throw new AgentSearchError(
+        `No response received from the server. Request details: ${JSON.stringify(
+          error.request
+        )} - Stack: ${errorMessage}`,
+        500
+      );
     } else {
-      throw new AgentSearchError("Error setting up the request", 500);
+      throw new AgentSearchError(
+        `Error setting up the request: ${errorMessage}`,
+        500
+      );
     }
   }
 }
