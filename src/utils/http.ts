@@ -36,9 +36,7 @@ export async function makeRequest<T>(
       );
     } else if (error.request) {
       throw new AgentSearchError(
-        `No response received from the server. Request details: ${JSON.stringify(
-          error.request
-        )} - Stack: ${errorMessage}`,
+        `No response received from the server. Stack: ${errorMessage}`,
         500
       );
     } else {
